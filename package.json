@@ -1,0 +1,10 @@
+{
+  "name": "canvas-focal-mechanism",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fms.js",
+  "types": "type.d.ts",
+  "keywords": [],
+  "author": "soshi1822",
+  "license": "MIT"
+}
