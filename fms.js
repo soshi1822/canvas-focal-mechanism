@@ -265,18 +265,6 @@
                 };
             }
 
-            static fromProduct(t) {
-                let e, i, s, r, h;
-                return t ? (h = null, r = t.type, s = t.properties || {}, "focal-mechanism" === r ? h = a.fromStrikeDipRake(Number(s["nodal-plane-1-strike"]), Number(s["nodal-plane-1-dip"]), Number(s["nodal-plane-1-rake"] || s["nodal-plane-1-slip"] || 0), Number(s["scalar-moment"] || Math.SQRT2)) : "moment-tensor" === r && (h = new a({
-                    mpp: Number(s["tensor-mpp"]),
-                    mrp: Number(s["tensor-mrp"]),
-                    mrr: Number(s["tensor-mrr"]),
-                    mrt: Number(s["tensor-mrt"]),
-                    mtp: Number(s["tensor-mtp"]),
-                    mtt: Number(s["tensor-mtt"])
-                }), (e = s["derived-depth"]) || (e = s.depth), h.depth = e, (i = s["sourcetime-duration"]) && (h.halfDuration = i / 2)), h && (h.product = t, (r = s["derived-magnitude-type"]) || (r = s["beachball-type"]) && n.hasOwnProperty(r) && (r = n[r]), r && (h.type = r)), h) : null;
-            }
-
             static fromStrikeDipRake(t, e, i, s) {
                 let n, h, o, l, u, c, f, m, d, p, g, M, b, x, w, P, y, v, z;
                 return x = t * r, z = Math.sin(x), u = Math.cos(x), P = Math.sin(2 * x), h = Math.cos(2 * x), c = e * r, y = Math.sin(c), o = Math.cos(c), w = Math.sin(2 * c), n = Math.cos(2 * c), b = (i % 90 != 0 ? i : i + 1e-15) * r, v = Math.sin(b), l = Math.cos(b), new a({
